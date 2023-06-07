@@ -7,7 +7,7 @@
     <title>Socket Server</title>
 </head>
 <body>
-    <h1>Acceso denegado...</h1>
+    <h1>Acceso Restringido</h1>
 
     <script src="socket.io/socket.io.js"></script>
 
@@ -27,6 +27,17 @@
         socket.on('mensaje', function(payload){
             console.log('Escuchando: ', payload);
         });
+
+        socket.on('nuevo-mensaje', function(payload){
+            console.log('Escuchando: ', payload);
+        });
+        
+        socket.on('Active-Bands', function(bands){
+            console.clear();
+            console.table(bands);
+        });
+
+
 
     </script>
     
